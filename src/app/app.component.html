@@ -1,0 +1,28 @@
+<div class="main">
+    <h1>{{card.bank}}</h1>
+    <div class="container">
+        <div class="container-logo">
+            <img src="../assets/loce-ce.jpg" alt="">
+            <p>{{card.bank}}</p>
+        </div>
+        <div class="container-sans-contact">
+            <img src="../assets/sans-contact-fotor-20240513183621.png" alt="">
+            <img class="puce" src="../assets/puce-removebg-preview.png" alt="">
+        </div>
+        <div class="code-card">
+            @for (item of card.numcard; track $index) {
+                <p>{{item}}</p>
+            }
+        </div>
+        <div class="other-logo">
+            <img src="../assets/arrow_left.png" alt="">
+            <img src="../assets/logo-cb-removebg-preview.png" alt="">
+            <p>expire a fin <span> {{card.expiry}}</span></p>
+        </div>
+        <div class="infos">
+            <h2>mr {{card.firstname}} {{card.lastname}}</h2>
+            <img src="../assets/visa-logo-removebg-preview.png" alt="">
+        </div>
+
+    </div>
+</div>
