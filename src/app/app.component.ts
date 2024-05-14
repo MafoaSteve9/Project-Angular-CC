@@ -21,7 +21,6 @@ interface DataCard {
 export class AppComponent {
 
 
-  pNone: 'visible' | 'hidden' = 'visible'
 
   card:  DataCard = {
     bank: "Caisse d'épargne",
