@@ -34,12 +34,4 @@ export class AppComponent {
   methodRandom(): number {
     return Math.floor(Math.random() * 900) + 100
   }
-  displayNone() {
-    if (this.pNone === 'visible') {
-      this.pNone = 'hidden'
-    } else {
-      this.pNone = 'visible'
-    }
-  } 
-  
 }
