@@ -1,5 +1,5 @@
 <div class="main">
-    <h1>{{card.bank}}</h1>
+    <!-- <h1>{{card.bank}}</h1> -->
     <div class="container">
         <div class="container-logo">
             <img src="../assets/loce-ce.jpg" alt="">
@@ -10,9 +10,14 @@
             <img class="puce" src="../assets/puce-removebg-preview.png" alt="">
         </div>
         <div class="code-card">
-            @for (item of card.numcard; track $index) {
-                <p>{{item}}</p>
+           <div class="row">
+            @for (num of card.numcard; track $index) {
+                <p class="num-card">{{num}}</p>
             }
+           </div>
+            <div (click)="displayNone()">
+                <p [class]="pNone" class="cryptogramme">{{methodRandom()}}</p>
+            </div>
         </div>
         <div class="other-logo">
             <img src="../assets/arrow_left.png" alt="">
@@ -23,6 +28,7 @@
             <h2>mr {{card.firstname}} {{card.lastname}}</h2>
             <img src="../assets/visa-logo-removebg-preview.png" alt="">
         </div>
+        <div class="btn"><button (click)="methodRandom()">Cryptogramme</button></div>
 
     </div>
 </div>
