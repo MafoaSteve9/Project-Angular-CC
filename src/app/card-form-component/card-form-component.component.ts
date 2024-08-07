@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { DataCard } from '../interfaces/data-card.interface';
 import { CreditCardComponent } from "../credit-card/credit-card.component";
 @Component({
@@ -39,7 +39,6 @@ this.form = this.fb.group({
 get cardNumberControls() {
   return (this.form.get('cardNumber') as FormArray).controls
 }
-
 
 onSubmit() {
   if (this.form.valid) {
