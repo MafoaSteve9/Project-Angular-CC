@@ -1,0 +1,37 @@
+<div class="main">
+    <!-- <h1>{{card.bank}}</h1> -->
+    <div class="container">
+        <div class="container-logo">
+            <img src="../assets/loce-ce.jpg" alt="">
+            <p>{{card?.bank}}</p>
+        </div>
+        <div class="container-sans-contact">
+            <img src="../assets/sans-contact-fotor-20240513183621.png" alt="">
+            <img class="puce" src="../assets/puce-removebg-preview.png" alt="">
+        </div>
+        <div class="code-card">
+           <div class="row">
+            <!-- @for (num of card?.numcard; track $index) { -->
+                <p class="num-card">{{card?.numcard?.join(' ')}}</p>
+            <!-- } -->
+           </div>
+            <div>
+                <!-- <p class="cryptogramme">{{methodRandom()}}</p> -->
+            </div>
+        </div>
+        <div class="other-logo">
+            <img src="../assets/arrow_left.png" alt="">
+            <img src="../assets/logo-cb-removebg-preview.png" alt="">
+            <p>expire a fin <span> {{card?.expiry}}</span></p>
+        </div>
+        <div class="infos">
+            <h2>mr {{card?.firstname}} {{card?.lastname}}</h2>
+            <img src="../assets/visa-logo-removebg-preview.png" alt="">
+        </div>
+        <!-- <div class="btn"><button (click)="methodRandom()">Cryptogramme</button></div> -->
+
+    </div>
+    <div class="container">
+        <div class="black-headband"></div>
+        <div class="cvc-headband"><p>{{card?.cvc}}</p></div>
+    </div>

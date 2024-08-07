@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+
+    .container-right {
+        margin-top: 50px;
+
+        #cardFirstname, #cardLastname {
+            margin: 2px 0px 10px 0px;
+            padding: 5px;
+            border-radius: 5px;
+            border: solid rgba(0, 0, 0, 0.192) 2px;
+            width: 292px;
+        }
+        .width-input {
+            margin: 2px;
+            padding: 5px;
+            border-radius: 5px;
+            border: solid rgba(0, 0, 0, 0.192) 2px;
+            width: 70px;
+        }
+    }
+}
+.exp-cvc {
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+    gap: 6px;
+    padding: 5px;
+
+    #cardExpDate {
+        padding: 4px;
+        width: 150px;
+        margin-top: 5px;
+    }
+
+    #cvc {
+        width: 120px;
+        padding: 5px;
+        margin-top: 5px;
+    }
+}

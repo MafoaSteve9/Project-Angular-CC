@@ -1,0 +1,97 @@
+<div class="container">
+
+    <div class="container-left">
+        <app-credit-card [card]="card"></app-credit-card>
+    </div>
+    <div class="container-right">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <label for="cardFirstname">Firstname:</label>
+        <br>
+        <input type="text" id="cardFirstname" formControlName="cardFirstname"minlength="2" maxlength="15">
+        @if (form.get('cardFirstname')?.invalid && form.get('cardFirstname')?.touched) {
+          <div>
+            @if (form.get('cardFirstname')?.hasError('required')) {
+              <small>Le prénom est requis</small>
+            }
+          </div>
+        }
+        <br>
+    
+        <label for="cardLastname">Lastname:</label>
+        <br>
+        <input type="text" id="cardLastname" formControlName="cardLastname" minlength="2" maxlength="15">
+        @if (form.get('cardLastname')?.invalid && form.get('cardLastname')?.touched) {
+          <div>
+            @if (form.get('cardLastname')?.hasError('required')) {
+              <small>Le nom est requis</small>
+            }
+          </div>
+        }
+        <br>
+    
+        <label for="numcard0">Numcard :</label>
+        <div formArrayName="cardNumber">
+          <div>
+            @for (control of cardNumberControls; track $index) {
+              <input class="width-input" type="text" [formControlName]="$index" maxlength="4">
+              @if (control.invalid && control.touched) {
+                <div>
+                  @if (control.hasError('required')) {
+                    <small>Le numéro de carte est requis.</small>
+                  }
+                  @if (control.hasError('maxlength')) {
+                    <small>Maximum 4 chiffres.</small>
+                  }
+                  @if (control.hasError('pattern')) {
+                    <small>Seulement des chiffres.</small>
+                  }
+                </div>
+              }
+            }
+          </div>
+        </div>
+        <br>
+        <div class="exp-cvc">
+          <div>
+            <label for="cardExpDate">EXPIRE (MM/YY):</label>
+            <br>
+            <input type="date" id="cardExpDate" formControlName="expDate">
+            @if (form.get('expDate')?.invalid && form.get('expDate')?.touched) {
+              <div>
+                @if (form.get('expDate')?.hasError('required')) {
+                  <small>Date d'expiration est requise.</small>
+                }
+                @if (form.get('expDate')?.hasError('pattern')) {
+                  <small>Format valide: MM/AA.</small>
+                }
+              </div>
+            }
+          </div>
+          <br>
+        <div>
+          <label for="cvc">CVC:</label>
+          <br>
+          <input type="text" id="cvc" formControlName="cvc">
+          @if (form.get('cvc')?.invalid && form.get('cvc')?.touched) {
+            <div>
+              @if (form.get('cvc')?.hasError('required')) {
+                <small>CVC est requis.</small>
+              }
+              @if (form.get('cvc')?.hasError('minlength')) {
+                <small>Minimum 3 chiffres.</small>
+              }
+              @if (form.get('cvc')?.hasError('maxlength')) {
+                <small>Maximum 3 chiffres.</small>
+              }
+              @if (form.get('cvc')?.hasError('pattern')) {
+                <small>Seulement des chiffres.</small>
+              }
+            </div>
+          }
+        </div>
+        </div>
+        <br>
+        <button type="submit">Confirm</button>
+      </form>
+    </div>
+  </div>

@@ -1,36 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
-interface DataCard {
-  bank: string,
-  numcard: string[]
-  expiry: string,
-  firstname: string,
-  lastname: string
-
-  
-}
+import { FormsModule } from '@angular/forms';
+import { CreditCardComponent } from './credit-card/credit-card.component';
+import { CardFormComponentComponent } from './card-form-component/card-form-component.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CreditCardComponent, CardFormComponentComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
 
-
-
-  card:  DataCard = {
-    bank: "Caisse d'épargne",
-    numcard: ['5600', '7890', '1200', '0340'],
-    expiry: "12/28",
-    firstname: "John",
-    lastname: "Doe"
-  }
-
-  methodRandom(): number {
-    return Math.floor(Math.random() * 900) + 100
-  }
 }
