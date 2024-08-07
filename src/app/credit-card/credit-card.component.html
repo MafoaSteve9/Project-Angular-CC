@@ -1,5 +1,4 @@
 <div class="main">
-    <!-- <h1>{{card.bank}}</h1> -->
     <div class="container">
         <div class="container-logo">
             <img src="../assets/loce-ce.jpg" alt="">
@@ -11,13 +10,8 @@
         </div>
         <div class="code-card">
            <div class="row">
-            <!-- @for (num of card?.numcard; track $index) { -->
                 <p class="num-card">{{card?.numcard?.join(' ')}}</p>
-            <!-- } -->
            </div>
-            <div>
-                <!-- <p class="cryptogramme">{{methodRandom()}}</p> -->
-            </div>
         </div>
         <div class="other-logo">
             <img src="../assets/arrow_left.png" alt="">
@@ -28,8 +22,6 @@
             <h2>mr {{card?.firstname}} {{card?.lastname}}</h2>
             <img src="../assets/visa-logo-removebg-preview.png" alt="">
         </div>
-        <!-- <div class="btn"><button (click)="methodRandom()">Cryptogramme</button></div> -->
-
     </div>
     <div class="container">
         <div class="black-headband"></div>
